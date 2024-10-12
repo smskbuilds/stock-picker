@@ -2,7 +2,6 @@ import OpenAI from 'openai';
 import private_key from './keys.js';
 
 const openai = new OpenAI({
-    dangerouslyAllowBrowser: true,
     apiKey: private_key,
 });
 
@@ -18,8 +17,8 @@ const messages = [
 ];
 
 const response = await openai.chat.completions.create({
-    model: 'gpt-4',
+    model: 'chatgpt-4o-latest',
     messages: messages,
 });
 
-console.log(response.choices[0].message.content);
+console.log(response);
